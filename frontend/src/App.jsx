@@ -28,6 +28,7 @@ import AddProduct from "./INVENTORY/addProduct";
 import EditProduct from "./INVENTORY/editProduct";
 import ProductList from "./INVENTORY/productList";
 import StockDetails from "./INVENTORY/stockDetails";
+import Register from "./register";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/" element={<Owner />} />
         <Route path="/customer-login" element={<Customer />} />
         <Route path="/staff-login" element={<Staff />} />
+        
 
         {/* DASHBOARD */}
         <Route path="/customer-dashboard" element={<CustomerDashboard />} />
@@ -61,6 +63,10 @@ function App() {
         {/* SUPPLIERS */}
         <Route path="/add-supplier" element={<AddSupplier />} />
         <Route path="/supplier-list" element={<SupplierList />} />
+
+        <Route path="/register" element={<Register />} />
+
+
       </Routes>
     </BrowserRouter>
   );
