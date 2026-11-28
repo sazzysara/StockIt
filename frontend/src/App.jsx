@@ -14,6 +14,7 @@ import SupplierDashboard from "./pages/supplier/supplierDashboard";
 import Exports from "./pages/supplier/exportstocks";
 import Imports from "./pages/supplier/Importstocks";
 import SupplierSettings from "./pages/supplier/suppliersettings";
+import Dashboard from "./pages/dashboard";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login/>} />
         <Route  path="/register" element={<Register/>}/>
+        <Route path="/dashboard" element={<Dashboard/>}/>
         <Route  path="/alerts" element={<Alerts/>}/>
         <Route path="/admin" element={<Admin/>} >
             <Route path="adminDashboard" element={<AdminDashboard/>} />

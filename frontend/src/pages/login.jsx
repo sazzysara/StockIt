@@ -26,7 +26,7 @@ function Login() {
         if(registeredcreds.name===logindetails.username && registeredcreds.password===logindetails.password ){
             console.log("Successfully Logged in")
             navigate("/Dashboard",{
-              state: logindata
+              state: logindetails
             })
         }else{
           console.log("This email is not registered")
@@ -50,7 +50,7 @@ function Login() {
          <input type="text" required placeholder="username" name="username"  onChange={handlechange}></input>
          <label className="font-bold">Password</label>
          <input type="password" required placeholder="Enter your password" name="password"  onChange={handlechange}></input>
-         <button type="submit" className="font-bold text-white" onClick={handlesubmit}>Submit</button>
+         <button type="submit" className="font-bold" onClick={handlesubmit}>Submit</button>
       </div>
     </div>
 </form>

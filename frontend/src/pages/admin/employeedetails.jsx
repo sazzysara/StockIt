@@ -1,6 +1,6 @@
 function EmployeeDetails() {
     return ( 
-        <div>Employee Details</div>
+        <div>all Employee Details</div>
      );
 }
 
