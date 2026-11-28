@@ -1,72 +1,41 @@
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import Alerts from "./pages/alerts";
+import Admin from "./pages/admin/adminLayout";
+import AdminDashboard from "./pages/admin/admindashboard";
+import AdminSettings from "./pages/admin/adminSettings";
+import SupplierDetails from "./pages/admin/supplierDetails";
+import StockDetails from "./pages/admin/stockdetails";
+import EmployeeDetails from "./pages/admin/employeedetails";
+import Supplier from "./pages/supplier/supplierLayout";
+import SupplierDashboard from "./pages/supplier/supplierDashboard";
+import Exports from "./pages/supplier/exportstocks";
+import Imports from "./pages/supplier/Importstocks";
+import SupplierSettings from "./pages/supplier/suppliersettings";
 
-// LOGIN
-import Customer from "./LOGIN/Customer";
-import Owner from "./LOGIN/Owner";
-import Staff from "./LOGIN/Staff";
-
-// DASHBOARD
-import CustomerDashboard from "./DASHBOARD/Customer";
-import OwnerDashboard from "./DASHBOARD/Owner";
-import StaffDashboard from "./DASHBOARD/Staff";
-
-// CUSTOMER
-import ProductCatalog from "./CUSTOMER/productCatalog";
-
-// FRIDGE
-import ProductsList from "./FRIDGE/ProductsInFridge";
-import Temperature from "./FRIDGE/Temperature";
-
-
-// SUPPLIERS
-import AddSupplier from "./SUPPLIERS/AddSupplier";
-import SupplierList from "./SUPPLIERS/SupplierList";
-
-import Orders from "./CUSTOMER/orders";
-import AddProduct from "./INVENTORY/addProduct";
-import EditProduct from "./INVENTORY/editProduct";
-import ProductList from "./INVENTORY/productList";
-import StockDetails from "./INVENTORY/stockDetails";
-import Register from "./register";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* LOGIN */}
-        <Route path="/" element={<Owner />} />
-        <Route path="/customer-login" element={<Customer />} />
-        <Route path="/staff-login" element={<Staff />} />
-        
-
-        {/* DASHBOARD */}
-        <Route path="/customer-dashboard" element={<CustomerDashboard />} />
-        <Route path="/owner-dashboard" element={<OwnerDashboard />} />
-        <Route path="/staff-dashboard" element={<StaffDashboard />} />
-
-        {/* CUSTOMER */}
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/product-catalog" element={<ProductCatalog />} />
-
-        {/* FRIDGE */}
-        <Route path="/products-In" element={<ProductsIn/>} />
-        <Route path="/temperature" element={<Temperature />} />
-
-        {/* INVENTORY */}
-        <Route path="/add-product" element={<AddProduct/>} />
-        <Route path="/edit-product" element={<EditProduct />} />
-        <Route path="/product-list" element={<ProductList />} />
-        <Route path="/stock-details" element={<StockDetails />} />
-
-        {/* SUPPLIERS */}
-        <Route path="/add-supplier" element={<AddSupplier />} />
-        <Route path="/supplier-list" element={<SupplierList />} />
-
-        <Route path="/register" element={<Register />} />
-
-
+        <Route path="/" element={<Login/>} />
+        <Route  path="/register" element={<Register/>}/>
+        <Route  path="/alerts" element={<Alerts/>}/>
+        <Route path="/admin" element={<Admin/>} >
+            <Route path="adminDashboard" element={<AdminDashboard/>} />
+            <Route path="adminSettings" element={<AdminSettings/>} />
+            <Route path="supplierdetails" element={<SupplierDetails/>} />
+            <Route path="stockdetails" element={<StockDetails/>} />
+            <Route path="employeedetails" element={<EmployeeDetails/>} />
+        </Route>
+        <Route path="/supplier" element={<Supplier/>} >
+            <Route path="supplierDashboard" element={<SupplierDashboard/>} />
+            <Route path="supplierSettings" element={<SupplierSettings/>} />
+            <Route path="exports" element={<Exports/>} />
+            <Route path="imports" element={<Imports/>} />
+        </Route>      
       </Routes>
     </BrowserRouter>
   );
